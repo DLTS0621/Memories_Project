@@ -1,13 +1,12 @@
 import React from "react";
-import Post from './Post/Post.js'
+import Post from './Post/Post'; // No need for .js extension
 
 const Posts = () => {
-    return(
+    return (
         <>
-        <h1>POSTS</h1>
-        <Post/>
-
-        <Post/>
+            <h1>POSTS</h1>
+            <Post />
+            <Post />
         </>
     );
 }
