@@ -1,11 +1,17 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Container, Grow, Grid } from '@mui/material';
 import Posts from './components/Posts/Posts';
 import Form from './components/Form/Form';
 import memories from './images/memories.png';
 import { StyledAppBar, StyledTypography, StyledBox } from './styles';
+import { useDispatch } from "react-redux";
+import {getPosts} from './actions/posts';
 
 const App = () => {
+    const dispatch = useDispatch(); // Use the dispatch hook to dispatch actions
+    useEffect(()=>{
+         dispatch(getPosts());
+    }, [dispatch]);
     return (
         <Container maxWidth="lg">
             <StyledAppBar position="static" color="inherit">
